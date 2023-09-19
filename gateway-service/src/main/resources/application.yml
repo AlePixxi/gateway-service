@@ -1,0 +1,57 @@
+server:
+   port: 8771
+
+spring:
+   application:
+      name: gateway-service
+   cloud:
+     gateway:
+      routes:
+         - id: cancellazione-hr-service
+           uri: 'http://localhost:8206'
+           predicates:
+            - Path=/rest/api/hr/**
+         - id: gestione-hr-service
+           uri: 'http://localhost:8211'
+           predicates:
+            - Path=/rest/api/hr/**
+         - id: inserimento-tecnologia-service
+           uri:  'http://localhost:8210'
+           predicates:
+            - Path=/rest/api/categorie/**
+         - id: inserimento-categoria-service
+           uri:  'http://localhost:8209'
+           predicates:
+            - Path=/rest/api/categorie/**
+         - id: login-dipendente-service
+           uri:  'http://localhost:8202'
+           predicates:
+            - Path=/rest/api/login-dipendente/**
+         - id: login-hr-service
+           uri:  'http://localhost:8207'
+           predicates:
+            - Path=/rest/api/hr/**
+         - id: modifica-dipendente-service
+           uri:  'http://localhost:8201'
+           predicates:
+            - Path=/rest/api/dipendenti/**
+         - id: aggiornamento-hr-service
+           uri:  'http://localhost:8205'
+           predicates:
+            - Path=/rest/api/hr/**
+         - id: registrazione-dipendente-service
+           uri:  'http://localhost:8200'
+           predicates:
+            - Path=/rest/api/dipendenti/**
+         - id: registrazione-hr-service
+           uri:  'http://localhost:8204'
+           predicates:
+            - Path=/rest/api/hr/**
+         - id: ricerca-dipendenti-service
+           uri:  'http://localhost:8208'
+           predicates:
+            - Path=/rest/api/dipendenti-per-tecnologie/**
+         - id: competenza-service
+           uri:  'http://localhost:8210'
+           predicates:
+            - Path=/rest/api/competenze/**
