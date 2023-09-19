@@ -10,15 +10,15 @@ spring:
          - id: cancellazione-hr-service
            uri: 'http://localhost:8206'
            predicates:
-            - Path=/rest/api/hr/**
+            - Path=/rest/api/hr/cancellazione/**
          - id: gestione-hr-service
            uri: 'http://localhost:8211'
            predicates:
-            - Path=/rest/api/hr/**
+            - Path=/rest/api/hr/utenti/**
          - id: inserimento-tecnologia-service
            uri:  'http://localhost:8210'
            predicates:
-            - Path=/rest/api/categorie/**
+            - Path=/rest/api/tecnologie/**
          - id: inserimento-categoria-service
            uri:  'http://localhost:8209'
            predicates:
@@ -26,32 +26,32 @@ spring:
          - id: login-dipendente-service
            uri:  'http://localhost:8202'
            predicates:
-            - Path=/rest/api/login-dipendente/**
+            - Path=/rest/api/dipendenti/login-dipendente
          - id: login-hr-service
            uri:  'http://localhost:8207'
            predicates:
-            - Path=/rest/api/hr/**
+            - Path=/rest/api/hr/login-hr
          - id: modifica-dipendente-service
            uri:  'http://localhost:8201'
            predicates:
-            - Path=/rest/api/dipendenti/**
+            - Path=/rest/api/dipendenti/modifica-dipendente
          - id: aggiornamento-hr-service
            uri:  'http://localhost:8205'
            predicates:
-            - Path=/rest/api/hr/**
+            - Path=/rest/api/hr/modifica/**
          - id: registrazione-dipendente-service
            uri:  'http://localhost:8200'
            predicates:
-            - Path=/rest/api/dipendenti/**
+            - Path=/rest/api/registrazione-dipendenti/**
          - id: registrazione-hr-service
            uri:  'http://localhost:8204'
            predicates:
-            - Path=/rest/api/hr/**
+            - Path=/rest/api/registrazione-hr/**
          - id: ricerca-dipendenti-service
            uri:  'http://localhost:8208'
            predicates:
             - Path=/rest/api/dipendenti-per-tecnologie/**
          - id: competenza-service
-           uri:  'http://localhost:8210'
+           uri:  'http://localhost:8203'
            predicates:
             - Path=/rest/api/competenze/**
