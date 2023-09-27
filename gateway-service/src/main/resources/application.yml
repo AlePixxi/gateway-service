@@ -55,3 +55,12 @@ spring:
            uri:  'http://localhost:8203'
            predicates:
             - Path=/rest/api/competenze/**
+      globalcors:
+       cors-configurations:
+         '[/**]':
+           allowedOrigins: "http://localhost:4200"
+           allowedMethods:
+             - GET
+             - POST
+             - PUT
+             - DELETE
