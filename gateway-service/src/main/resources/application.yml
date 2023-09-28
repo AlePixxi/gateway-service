@@ -6,6 +6,17 @@ spring:
       name: gateway-service
    cloud:
      gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200/"
+            allowedHeaders:
+              - content-type
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
       routes:
          - id: cancellazione-hr-service
            uri: 'http://localhost:8206'
@@ -55,12 +66,3 @@ spring:
            uri:  'http://localhost:8203'
            predicates:
             - Path=/rest/api/competenze/**
-      globalcors:
-       cors-configurations:
-         '[/**]':
-           allowedOrigins: "http://localhost:4200"
-           allowedMethods:
-             - GET
-             - POST
-             - PUT
-             - DELETE
