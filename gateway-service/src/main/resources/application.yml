@@ -6,6 +6,8 @@ spring:
       name: gateway-service
    cloud:
      gateway:
+      default-filters:
+      - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -17,6 +19,8 @@ spring:
               - POST
               - PUT
               - DELETE
+            allowCredentials: true
+            
       routes:
          - id: cancellazione-hr-service
            uri: 'http://localhost:8206'
