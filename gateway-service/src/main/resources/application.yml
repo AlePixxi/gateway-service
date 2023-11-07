@@ -14,11 +14,13 @@ spring:
             allowedOrigins: "http://localhost:4200/"
             allowedHeaders:
               - content-type
+              - Authorization
             allowedMethods:
               - GET
               - POST
               - PUT
               - DELETE
+              - PATCH
             allowCredentials: true
             
       routes:
@@ -57,6 +59,10 @@ spring:
          - id: modifica-dipendente-service
            uri: 'http://localhost:8201'
            predicates:
+             - Path=/rest/api/dipendenti/ottieni-dipendente
+         - id: modifica-dipendente-service
+           uri: 'http://localhost:8201'
+           predicates:
              - Path=/rest/api/dipendenti/ciao
          - id: aggiornamento-hr-service
            uri:  'http://localhost:8205'
@@ -77,4 +83,8 @@ spring:
          - id: competenza-service
            uri:  'http://localhost:8203'
            predicates:
-            - Path=/rest/api/competenze/**
+            - Path=/rest/api/competenze/associa-dipendente-tecnologie
+         - id: inserimento-tecnologia-service
+           uri: 'http://localhost:8203'
+           predicates:
+             - Path=/rest/api/tecnologie/tecnologie
