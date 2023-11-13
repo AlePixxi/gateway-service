@@ -31,7 +31,7 @@ spring:
          - id: gestione-hr-service
            uri: 'http://localhost:8211'
            predicates:
-            - Path=/rest/api/hr/utenti/**
+            - Path=/rest/api/hr/utenti/custom
          - id: inserimento-tecnologia-service
            uri:  'http://localhost:8210'
            predicates:
@@ -92,3 +92,11 @@ spring:
            uri: 'http://localhost:8203'
            predicates:
              - Path=/rest/api/competenze/tecnologie
+         - id: gestione-hr-service
+           uri: 'http://localhost:8211'
+           predicates:
+             - Path=/rest/api/hr/trovaHr
+         - id: gestione-hr-service
+           uri: 'http://localhost:8211'
+           predicates:
+             - Path=/rest/api/hr/dipendenti-competenze/tecnologie
