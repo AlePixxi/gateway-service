@@ -48,6 +48,10 @@ spring:
            uri:  'http://localhost:8202'
            predicates:
             - Path=/rest/api/dipendenti/login-dipendente
+         - id: login-dipendente-service
+           uri: 'http://localhost:8202'
+           predicates:
+             - Path=/rest/api/dipendenti/reset-token
          - id: login-hr-service
            uri:  'http://localhost:8207'
            predicates:
@@ -92,6 +96,10 @@ spring:
            uri: 'http://localhost:8203'
            predicates:
              - Path=/rest/api/competenze/tecnologie
+         - id: competenza-service
+           uri: 'http://localhost:8203'
+           predicates:
+             - Path=/rest/api/competenze/tecnologie-del-dipendente
          - id: gestione-hr-service
            uri: 'http://localhost:8211'
            predicates:
@@ -100,3 +108,31 @@ spring:
            uri: 'http://localhost:8211'
            predicates:
              - Path=/rest/api/hr/dipendenti-competenze/tecnologie
+         - id: recupero-password-service
+           uri: 'http://localhost:8212'
+           predicates:
+             - Path=/rest/api/recupero-password
+         - id: recupero-password-service
+           uri: 'http://localhost:8212'
+           predicates:
+             - Path=/rest/api/verifica-token
+         - id: cancellazione-categoria-service
+           uri: 'http://localhost:8213'
+           predicates:
+             - Path=/rest/api/cancellazione-categoria/**
+         - id: cancellazione-tecnologia-service
+           uri: 'http://localhost:8214'
+           predicates:
+             - Path=/rest/api/cancellazione-tecnologia
+         - id: certificazioni-service
+           uri: 'http://localhost:8215'
+           predicates:
+             - Path=/rest/api/certificazioni/nuova-certificazione
+         - id: certificazioni-service
+           uri: 'http://localhost:8215'
+           predicates:
+             - Path=/rest/api/certificazioni/cancellazione-certificazione/**
+         - id: certificazioni-service
+           uri: 'http://localhost:8215'
+           predicates:
+             - Path=/rest/api/certificazioni/lista-certificazioni
