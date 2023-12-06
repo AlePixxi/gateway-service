@@ -64,10 +64,14 @@ spring:
            uri: 'http://localhost:8201'
            predicates:
              - Path=/rest/api/dipendenti/ottieni-dipendente
-         - id: modifica-dipendente-service
-           uri: 'http://localhost:8201'
+         - id: gestione-hr-service
+           uri: 'http://localhost:8211'
            predicates:
-             - Path=/rest/api/dipendenti/ciao
+             - Path=/rest/api/hr/ultimi-utenti
+         - id: ricerca-dipendenti-service
+           uri: 'http://localhost:8208'
+           predicates:
+             - Path=/rest/api/dipendenti-per-tecnologie/ultimi-dipendenti
          - id: aggiornamento-hr-service
            uri:  'http://localhost:8205'
            predicates:
