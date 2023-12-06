@@ -148,3 +148,7 @@ spring:
            uri: 'http://localhost:8215'
            predicates:
              - Path=/rest/api/certificazioni/carica-documento
+         - id: certificazioni-service
+           uri: 'http://localhost:8215'
+           predicates:
+             - Path=/rest/api/certificazioni/files/**
