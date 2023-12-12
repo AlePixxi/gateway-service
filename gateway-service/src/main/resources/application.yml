@@ -56,6 +56,10 @@ spring:
            uri:  'http://localhost:8207'
            predicates:
             - Path=/rest/api/hr/login-hr
+         - id: login-hr-service
+           uri: 'http://localhost:8207'
+           predicates:
+             - Path=/rest/api/hr/reset-token
          - id: modifica-dipendente-service
            uri:  'http://localhost:8201'
            predicates:
